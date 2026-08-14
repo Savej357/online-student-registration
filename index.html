@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>FTClagos Registration Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div class="top-header">
+    <div class="institution-brand">
+      <h1>Federal Training Centre Polytechnic, Ikoyi, Lagos</h1>
+      <p>Excellence in Technology & Innovation</p>
+    </div>
+    <div class="logo-motto">
+      <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+      <div class="motto-text"><span>Motto:</span> Knowledge, Integrity & Service</div>
+    </div>
+  </div>
+
+  <div class="portal-title">
+    <h2><i class="fas fa-user-graduate"></i> Online Student Registration Portal</h2>
+    <p>Academic Session 2025/2026 • Secure Enrollment • Mobile Ready</p>
+  </div>
+
+  <div class="form-tabs">
+    <button class="tab-btn active" data-form="hnd">HND</button>
+    <button class="tab-btn" data-form="nd">ND</button>
+  </div>
+
+  <div class="form-card">
+    <!-- HND FORM SECTION -->
+    <div id="hndForm" class="form-section active-section">
+      <h3 style="color:var(--brown); margin-bottom: 1.2rem; font-size:1.3rem;"><i class="fas fa-certificate"></i> HND Registration</h3>
+      <form id="hndRegistrationForm">
+        <div class="form-grid">
+          <div class="input-group">
+            <label>Department *</label>
+            <select id="hndDept" required>
+              <option value="">-- Select Department --</option>
+              <option>Public Administration</option>
+              <option>Business Administration</option>
+              <option>Office Technology and Management</option>
+              <option>Accounting</option>
+            </select>
+            <div class="error-msg" id="hndDeptError"></div>
+          </div>
+          <div class="input-group"><label>Full Name (as in NIN) *</label><input type="text" id="hndFullname" placeholder="e.g., Okafor Chidi Michael"></div>
+          <div class="input-group"><label>Email Address *</label><input type="email" id="hndEmail" placeholder="student@domain.com"></div>
+          <div class="input-group"><label>Phone Number *</label><input type="tel" id="hndPhone"></div>
+          <div class="input-group"><label>NIN *</label><input type="text" id="hndNin" placeholder="National Identification Number"></div>
+          <div class="input-group"><label>Date of Birth *</label><input type="date" id="hndDob"></div>
+          <div class="input-group"><label>ND Statement of Result / Certificate *</label><input type="file" id="hndNdResult" accept=".pdf,.jpg,.png"></div>
+          <div class="input-group"><label>O'Level Result (WAEC/NECO/NABTEB) *</label><input type="file" id="hndOlevel" accept=".pdf,.jpg,.png"></div>
+          <div class="input-group"><label>IT Letter or Certificate *</label><input type="file" id="hndItLetter"></div>
+          <div class="input-group"><label>Birth Certificate Upload *</label><input type="file" id="hndBirthCert"></div>
+          <div class="input-group"><label>Passport Photograph *</label><input type="file" id="hndPassport" accept="image/*"></div>
+          <div class="input-group">
+            <label>Are you a Civil Servant? *</label>
+            <div class="radio-group">
+              <label><input type="radio" name="civilServantHnd" value="Yes"> Yes</label>
+              <label><input type="radio" name="civilServantHnd" value="No" checked> No</label>
+            </div>
+          </div>
+          <div id="hndStudyLeaveContainer" style="display:none;">
+            <div class="input-group"><label>Study Leave Letter Upload</label><input type="file" id="hndStudyLeave"></div>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Submit HND Application</button>
+      </form>
+    </div>
+
+    <!-- ND FORM SECTION -->
+    <div id="ndForm" class="form-section">
+      <h3 style="color:var(--brown); margin-bottom: 1rem;"><i class="fas fa-users"></i> ND Registration</h3>
+      <div class="sub-selector">
+        <div class="sub-card active-sub" data-ndtype="jambite"><i class="fas fa-scroll"></i><h4>JAMBITE</h4><small>UTME Admission</small></div>
+        <div class="sub-card" data-ndtype="civil"><i class="fas fa-briefcase"></i><h4>CIVIL SERVANT</h4><small>Part-Time/Staff</small></div>
+      </div>
+      <form id="ndRegistrationForm">
+        <div class="form-grid">
+          <div class="input-group"><label>Full Name *</label><input type="text" id="ndFullname" required></div>
+          <div class="input-group"><label>Email Address *</label><input type="email" id="ndEmail" required></div>
+          <div class="input-group"><label>Phone Number *</label><input type="tel" id="ndPhone" required></div>
+          <div class="input-group">
+            <label>Department *</label>
+            <select id="ndDept" required>
+              <option value="">-- Select --</option>
+              <option>Computer Science</option>
+              <option>Public Administration</option>
+              <option>Business Administration</option>
+              <option>Office Technology and Management</option>
+              <option>Accounting</option>
+            </select>
+          </div>
+          <div class="input-group"><label>NIN *</label><input type="text" id="ndNin" required></div>
+          <div class="input-group"><label>Date of Birth *</label><input type="date" id="ndDob" required></div>
+        </div>
+        <div id="ndJambiteFields">
+          <div class="form-grid">
+            <div class="input-group"><label>JAMB Result Slip *</label><input type="file" id="ndJambResult"></div>
+            <div class="input-group"><label>Admission Letter *</label><input type="file" id="ndAdmissionLetter"></div>
+            <div class="input-group"><label>WAEC Result *</label><input type="file" id="ndWaecResult"></div>
+            <div class="input-group"><label>Passport Photograph *</label><input type="file" id="ndPassportJamb"></div>
+          </div>
+        </div>
+        <div id="ndCivilFields" style="display:none;">
+          <div class="form-grid">
+            <div class="input-group"><label>Part-Time Admission Form *</label><input type="file" id="ndPartTimeForm"></div>
+            <div class="input-group"><label>Letter of Attestation *</label><input type="file" id="ndAttestation"></div>
+            <div class="input-group"><label>Passport Photograph *</label><input type="file" id="ndPassportCivil"></div>
+            <div class="input-group"><label>Study Leave Letter (Optional)</label><input type="file" id="ndStudyLeaveOptional"></div>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn"><i class="fas fa-check-circle"></i> Submit ND Application</button>
+      </form>
+    </div>
+  </div>
+  
+<div id="loader" class="loader-overlay"><div class="loader"><i class="fas fa-spinner fa-pulse"></i> Submitting, please wait...</div></div>
+<div id="successModal" class="modal"><div class="modal-card"><i class="fas fa-check-circle"></i><h3 style="margin:1rem 0">Registration Successful!</h3><p>Your form has been submitted successfully and is currently undergoing verification.</p><p class="reg-id-display">Registration ID: <strong id="regIdDisplay"></strong><br><small>Please save this ID for future reference.</small></p><div class="modal-buttons"><button class="btn-ok" id="modalOkBtn">OK</button><button id="modalCloseBtn">Close</button></div></div></div>
+
+<!-- Firebase (compat SDK - simplest to combine with a plain <script> file) -->
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
